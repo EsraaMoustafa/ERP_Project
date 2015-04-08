@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <openerp>
+            <data>
+                <record model="ir.ui.view" id="erp_category_form">
+                    <field name="name">erp.category.form</field>
+                    <field name="model">erp.category</field>
+                    <field name="arch" type="xml">
+                        <form string="الابواب" version="7.0">
+                            <sheet>
+                                <group>
+                                    <field name="name" />
+                                    <field name="code" />
+                                    <field name="subcategory_id">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="describtion"/>
+                                        <field name="category_id"/>
+                                    </field>
+                                </group>
+                                <notebook>
+                                    <page string="معلومات اضافية">
+                                        <field name="describtion"/>
+                                    </page>
+                                </notebook>
+
+                            </sheet>
+                        </form>
+                    </field>
+                </record>
+                <record id="erp_category_action" model="ir.actions.act_window">
+                    <field name="name">erp.category</field>
+                    <field name="res_model">erp.category</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">tree,form</field>
+
+                </record>
+                <menuitem id="Stocks" name="Stocks"/>
+                <menuitem id="Warehouse" name="Warehouse" parent="Stocks"/>
+                <menuitem id="Category" name="Category"  parent="Warehouse" action="erp_category_action" />
+
+                <!-- the subcategory Def-->
+                <record model="ir.ui.view" id="erp_subcategory_form">
+                    <field name="name">erp.subcategory.form</field>
+                    <field name="model">erp.subcategory</field>
+                    <field name="arch" type="xml">
+                        <form string="الاقسام" version="7.0">
+                            <sheet>
+                                <group>
+                                    <field name="name" />
+                                    <field name="code" />
+                                    <field name="describtion" />
+                                    <field name="category_id" />
+                                    <field name="subsubcategory">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="describtion"/>
+                                        <field name="subcategory"/>
+                                    </field>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </record>
+                <record id="erp_subcategory_action" model="ir.actions.act_window">
+                    <field name="name">erp subcategory</field>
+                    <field name="res_model">erp.subcategory</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">tree,form</field>
+
+                </record>
+		<menuitem id="Stocks" name="Stocks"/>
+                <menuitem id="Warehouse" name="Warehouse" parent="Stocks"/>
+                <menuitem id="Sub" name="Sub Category" parent="Warehouse" action="erp_subcategory_action"/>
+
+                <!-- sub sub category -->
+                 <record model="ir.ui.view" id="erp_subsubcategory_form">
+                    <field name="name">erp.subsubcategory.form</field>
+                    <field name="model">erp.subsubcategory</field>
+                    <field name="arch" type="xml">
+                        <form string="الاقسام الفرعية" version="7.0">
+                            <sheet>
+                                <group>
+                                    <field name="name" />
+                                    <field name="code" />
+                                    <field name="describtion" />
+                                    <field name="subcategory" />
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </record>
+                <record id="erp_subcategory_action" model="ir.actions.act_window">
+                    <field name="name">erp subsubcategory</field>
+                    <field name="res_model">erp.subsubcategory</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">tree,form</field>
+
+                </record>
+		<menuitem id="Stocks" name="Stocks"/>
+                <menuitem id="Warehouse" name="Warehouse" parent="Stocks"/>
+                <menuitem id="Category" name="Category" parent="Warehouse" action="erp_category_action"/>
+            </data>
+</openerp>
