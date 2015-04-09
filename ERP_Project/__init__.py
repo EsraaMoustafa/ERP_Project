@@ -1,3 +1,1 @@
-#! /usr/bin/env python
-#encoding:UTF-8
-import ERP_Project
+import ERPProject,ERP_Project
