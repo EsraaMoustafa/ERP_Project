@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="pro_product_form" model="ir.ui.view">
+            <field name="name">pro.product.form</field>
+            <field name="model">pro.product</field>
+            <field name="arch" type="xml">
+                <form string="product" version="7.0">
+                    <sheet>
+                        <group string="المنتج">
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="price"/>
+                            <field name="status"/>
+                            <field name="quantity"/>
+                            <field name="description"/>
+                        </group>
+                        <group string="تفاصيل">
+                            <field name="cat_id"/>
+                            <field name="sub_id"/>
+                            <field name="subsub_id"/>
+                            <field name="concat"/>
+                            <field name="stockk_id"/>
+                            <field name="concat"/>
+                            <field name="stage"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pro_supplier_form" model="ir.ui.view">
+            <field name="name">pro.supplier.form</field>
+            <field name="model">pro.supplier</field>
+            <field name="arch" type="xml">
+                <form string="supplier" version="7.0">
+                    <sheet>
+                        <group string="المورد">
+                            <field name="name"/>
+                            <field name="address"/>
+                            <field name="tel"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pro_product_action" model="ir.actions.act_window">
+           <field name="name">pro.product</field>
+           <field name="res_model">pro.product</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="pro_supplier_action" model="ir.actions.act_window">
+           <field name="name">pro.supplier</field>
+           <field name="res_model">pro.supplier</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="Product" name="المنتجات"  parent="Warehouse" action="pro_product_action" />
+        <menuitem id="Supplier" name="الموردين"  parent="Warehouse" action="pro_supplier_action" />
+    </data>
+</openerp>

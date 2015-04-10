@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 #encoding:UTF-8
+import ERP_Project
 from openerp.osv import orm, fields
 class pro_product(orm.Model):
     status = [('new','new'),('reused','reused'),('damaged','damaged')]
@@ -11,5 +12,5 @@ class pro_product(orm.Model):
         'quantity' : fields.integer(string='quantity'),
         'price' : fields.integer(string='price'),
         'description' : fields.char(string='description',size=250),
-	    'product': fields.many2one('erp.subsubcategory','pro')
+	    'subsub_id': fields.many2one('erp.subsubcategory','pro')
     }
