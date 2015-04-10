@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+<<<<<<< HEAD
 # encoding:UTF-8
 from openerp.osv import orm,osv, fields
 class pro_product(orm.Model):
@@ -94,3 +95,21 @@ class my_stock(orm.Model):
       'keeper_id':fields.many2one('res.users',
       string='Keeper',required=True),
       }
+=======
+#encoding:UTF-8
+import ERP_Project
+from openerp.osv import orm, fields
+class pro_product(orm.Model):
+    status = [('new','new'),('reused','reused'),('damaged','damaged')]
+    _name = 'pro.product'
+    _columns = {
+        'code' : fields.integer(string='code'),
+        'name' : fields.char(string='name',size=50),
+        'status' : fields.selection(status,'status'),
+        'quantity' : fields.integer(string='quantity'),
+        'price' : fields.integer(string='price'),
+        'description' : fields.char(string='description',size=250),
+	    'product': fields.many2one('erp.subsubcategory',
+                                   'pro')
+    }
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672

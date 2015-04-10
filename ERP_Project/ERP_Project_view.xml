@@ -5,6 +5,7 @@
                     <field name="name">erp.category.form</field>
                     <field name="model">erp.category</field>
                     <field name="arch" type="xml">
+<<<<<<< HEAD
                         <form string="الأبواب" version="7.0">
                             <sheet>
                                 <group>
@@ -20,6 +21,37 @@
                                 <notebook>
                                     <page string="معلومات اضافية">
                                         <field name="description"/>
+=======
+                        <form string="الابواب" version="7.0">
+                            <sheet>
+                                <group>
+<<<<<<< HEAD
+                                    <field name="name" />
+                                    <field name="code" />
+                                    <field name="subcategory_id">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="describtion"/>
+                                        <field name="category_id"/>
+=======
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="subcategory_id">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="description"/>
+                                        <field name="subcategory_id"/>
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+                                    </field>
+                                </group>
+                                <notebook>
+                                    <page string="معلومات اضافية">
+<<<<<<< HEAD
+                                        <field name="describtion"/>
+=======
+                                        <field name="description"/>
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                                     </page>
                                 </notebook>
 
@@ -28,26 +60,51 @@
                     </field>
                 </record>
                 <record id="erp_category_action" model="ir.actions.act_window">
+<<<<<<< HEAD
                     <field name="name">erp.category</field>
+=======
+<<<<<<< HEAD
+                    <field name="name">erp category</field>
+=======
+                    <field name="name">erp.category</field>
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                     <field name="res_model">erp.category</field>
                     <field name="view_type">form</field>
                     <field name="view_mode">tree,form</field>
 
                 </record>
+<<<<<<< HEAD
                 <menuitem id="Stocks" name="نظام إدارة المخازن"/>
                 <menuitem id="Warehouse" name="المخازن" parent="Stocks"/>
                 <menuitem id="Category" name="الأبواب"  parent="Warehouse" action="erp_category_action" />
+=======
+<<<<<<< HEAD
+                <menuitem id="top" name="نظام ادارة المخازن" />
+                <menuitem id="studentMenu" name="student" parent="top" />
+                <menuitem id="student" name="قائمة ادارة المخازن"  parent="studentMenu" action="erp_category_action" />
+=======
+                <menuitem id="Stocks" name="Stocks"/>
+                <menuitem id="Warehouse" name="Warehouse" parent="Stocks"/>
+                <menuitem id="Category" name="Category"  parent="Warehouse" action="erp_category_action" />
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
 
                 <!-- the subcategory Def-->
                 <record model="ir.ui.view" id="erp_subcategory_form">
                     <field name="name">erp.subcategory.form</field>
                     <field name="model">erp.subcategory</field>
                     <field name="arch" type="xml">
+<<<<<<< HEAD
                         <form string="الأقسام" version="7.0">
+=======
+                        <form string="الاقسام" version="7.0">
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                             <sheet>
                                 <group>
                                     <field name="name" />
                                     <field name="code" />
+<<<<<<< HEAD
                                     <field name="description" />
                                     <field name="category_id" />
                                     <field name="subsubcategory"/>
@@ -57,6 +114,22 @@
                                         <!--<field name="category_id" />-->
                                         <!--<field name="subsubcategory"/>-->
                                     <!--</field>-->
+=======
+                                    <field name="describtion" />
+                                    <field name="category_id" />
+                                    <field name="subsubcategory">
+                                        <field name="name"/>
+                                        <field name="code"/>
+<<<<<<< HEAD
+                                        <field name="describtion"/>
+                                        <field name="subcategory"/>
+=======
+                                        <field name="description"/>
+                                        <field name="category_id" />
+                                        <field name="subsubcategory"/>
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+                                    </field>
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                                 </group>
                             </sheet>
                         </form>
@@ -69,27 +142,59 @@
                     <field name="view_mode">tree,form</field>
 
                 </record>
+<<<<<<< HEAD
                 <menuitem id="Sub" name="المجموعات" parent="Warehouse" action="erp_subcategory_action"/>
+=======
+<<<<<<< HEAD
+
+                <menuitem id="student" name="قائمة ادارة الاقسام" parent="studentMenu" action="erp_category_action" />
+=======
+                <menuitem id="Sub" name="Sub Category" parent="Warehouse" action="erp_subcategory_action"/>
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
 
                 <!-- sub sub category -->
                  <record model="ir.ui.view" id="erp_subsubcategory_form">
                     <field name="name">erp.subsubcategory.form</field>
                     <field name="model">erp.subsubcategory</field>
                     <field name="arch" type="xml">
+<<<<<<< HEAD
                         <form string="الأقسام" version="7.0">
+=======
+                        <form string="الاقسام الفرعية" version="7.0">
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                             <sheet>
                                 <group>
                                     <field name="name" />
                                     <field name="code" />
+<<<<<<< HEAD
                                     <field name="description" />
                                     <field name="subcategory" />
                                     <field name="product_id" />
+=======
+<<<<<<< HEAD
+                                    <field name="describtion" />
+                                    <field name="subcategory" />
+=======
+                                    <field name="description" />
+                                    <field name="subcategory" />
+                                    <field name="product_id" />
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                                 </group>
                             </sheet>
                         </form>
                     </field>
                 </record>
+<<<<<<< HEAD
                 <record id="erp_subsubcategory_action" model="ir.actions.act_window">
+=======
+<<<<<<< HEAD
+                <record id="erp_subcategory_action" model="ir.actions.act_window">
+=======
+                <record id="erp_subsubcategory_action" model="ir.actions.act_window">
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                     <field name="name">erp subsubcategory</field>
                     <field name="res_model">erp.subsubcategory</field>
                     <field name="view_type">form</field>
@@ -97,6 +202,19 @@
 
                 </record>
 
+<<<<<<< HEAD
                 <menuitem id="SubSubCategory" name="الأقسام" parent="Warehouse" action="erp_subsubcategory_action"/>
             </data>
 </openerp>
+=======
+<<<<<<< HEAD
+                <menuitem id="studentt" name="قالفرعيةائمة ادارة الاقسام" parent="studentMenu" action="erp_category_action" />
+
+            </data>
+</openerp>
+=======
+                <menuitem id="SubSubCategory" name="SubSubCategory" parent="Warehouse" action="erp_subsubcategory_action"/>
+            </data>
+</openerp>
+>>>>>>> ed0d880b31dd5dcd0b1a3d95ac1109504d4f8ea7
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.module.category" id="iti_cat">
+            <field name="name">Role</field>
+        </record>
+
+
+        <record model="res.groups" id="erp_amen" >
+            <field name="name">امين مخزن</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <record model="res.groups" id="erp_managerforwarehouse" >
+            <field name="name">مدير مخزن</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('erp_amen'))]"/>
+        </record>
+
+
+ 	<record model="res.groups" id="erp_managerforwarehouses" >
+            <field name="name">مدير المخازن</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('erp_managerforwarehouse'))]"/>
+        </record>
+
+	<record model="res.groups" id="erp_member" >
+            <field name="name">عضو من اعضاء اللجنة</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('erp_managerforwarehouses'))]"/>
+        </record>
+
+	<record model="res.groups" id="erp_employee" >
+            <field name="name">موظف</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('erp_member'))]"/>
+        </record>
+
+
+	<record model="res.groups" id="erp_supermanager" >
+            <field name="name"> مدير  مجموعة من الموظفين</field>
+            <field name="category_id" ref="iti_cat"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('erp_employee'))]"/>
+        </record>
+		
+         
+
+
+    </data>
+</openerp>
+
+
+
+

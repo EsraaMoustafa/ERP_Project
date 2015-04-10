@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <form string="product" version="7.0">
                     <sheet>
+<<<<<<< HEAD
                         <group string="المنتج">
                             <field name="code"/>
                             <field name="name"/>
@@ -40,17 +41,31 @@
                             <field name="address"/>
                             <field name="tel"/>
                         </group>
+=======
+                        <group string="التفاصيل">
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="status"/>
+                            <field name="quantity"/>
+                            <field name="price"/>
+                            <field name="description"/>
+                        </group>
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
                     </sheet>
                 </form>
             </field>
         </record>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
         <record id="pro_product_action" model="ir.actions.act_window">
            <field name="name">pro.product</field>
            <field name="res_model">pro.product</field>
            <field name="view_type">form</field>
            <field name="view_mode">tree,form</field>
         </record>
+<<<<<<< HEAD
 
 
         <record id="pro_supplier_action" model="ir.actions.act_window">
@@ -61,5 +76,8 @@
         </record>
         <menuitem id="Product" name="المنتجات"  parent="Warehouse" action="pro_product_action" />
         <menuitem id="Supplier" name="الموردين"  parent="Warehouse" action="pro_supplier_action" />
+=======
+        <menuitem id="product" name="product" parent="Warehouse" action="product_action"/>
+>>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
     </data>
 </openerp>

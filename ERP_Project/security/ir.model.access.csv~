@@ -1,12 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-<<<<<<< HEAD
-access_myhr_2men,access.myhr.2men,model_erp_category,myhr_2men,0,0,0,0
-access_myhr_mderm5zn,access.myhr.mderm5zn,model_erp_category,myhr_mderm5zn,0,0,0,0
-access_myhr_mderm5aazn,access.myhr.mderm5aazn,model_erp_category,myhr_mderm5aazn,0,0,0,0
-access_myhr_3dolgna,access.myhr.3dolgna,model_erp_category,myhr_3dolgna,0,0,0,0
-access_myhr_employee,access.myhr.employee,model_erp_category,myhr_employee,0,0,0,0
-access_myhr_mdermozfen,access.myhr.mdermozfen,model_erp_category,myhr_mdermozfen,1,0,0,0
-=======
 access_erp_cat1,access.erp.cat1,model_erp_category,erp_amen,1,0,0,0
 access_erp_cat2,access.erp.cat2,model_erp_category,erp_managerforwarehouse,1,0,0,0
 access_erp_cat3,access.erp.cat3,model_erp_category,erp_managerforwarehouses,1,0,0,0
@@ -56,4 +48,3 @@ access_erp_cat36,access.erp.cat36,model_pro_product,erp_supermanager,1,0,0,0
 
 
 
->>>>>>> 74e071feb1cd591d6da3c18675d1507050498672
