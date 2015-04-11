@@ -122,4 +122,6 @@ class my_stock(orm.Model):
       'name':fields.char(string='الإسم',size=100),
       'keeper_id':fields.many2one('res.users',
       string='أمين المخزن',required=True),
+      'product_id':fields.one2many('pro.products',
+    'stockk_id',string='المنتجات'),
       }

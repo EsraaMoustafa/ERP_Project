@@ -69,6 +69,76 @@
            <field name="view_type">form</field>
            <field name="view_mode">tree,form</field>
         </record>
+
+
+          <!-- search for product -->
+        <record id="search_product_form" model="ir.ui.view">
+            <field name="name">search.product.form</field>
+            <field name="model">search.product</field>
+            <field name="arch" type="xml">
+                <form string="البحث عن منتج">
+                    <field name="search"/>
+                    <field name="change" on_change="func1(search,change)"/>
+                    <field name="result"/>
+                    <button name="%(search_product_action)d" string="another search" type="action"/>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="res_users_form" model="ir.ui.view">
+            <field name="name">res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <form string="adding to committee">
+        <button string="add to committee" name="chusergroup" type="object"/>
+               <field name="stock_id"/>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="search_product_action" model="ir.actions.act_window">
+           <field name="name">search.product</field>
+           <field name="res_model">search.product</field>
+           <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+
+        <record id="my_stock_form" model="ir.ui.view">
+            <field name="name">my.stock.form</field>
+            <field name="model">my.stock</field>
+            <field name="arch" type="xml">
+                <form string="product" version="7.0">
+                    <sheet>
+                        <group string="stock">
+                            <field name="address"/>
+                            <field name="keeper_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_stock_action" model="ir.actions.act_window">
+           <field name="name">my.stock</field>
+           <field name="res_model">my.stock</field>
+           <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="res_users_action" model="ir.actions.act_window">
+           <field name="name">res.users</field>
+           <field name="res_model">res.users</field>
+           <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="search" name="البحث عن منتج"  parent="Warehouse" action="search_product_action" />
+        <menuitem id="stock" name=" المخزن "  parent="Warehouse" action="my_stock_action" />
+        <menuitem id="user" name=" المستخدمون "  parent="Warehouse" action="res_users_action" />
         <menuitem id="Product" name="المنتجات"  parent="Warehouse" action="pro_product_action" />
         <menuitem id="Supplier" name="الموردين"  parent="Warehouse" action="pro_supplier_action" />
     </data>

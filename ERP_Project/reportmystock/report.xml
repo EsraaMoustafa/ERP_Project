@@ -4,7 +4,7 @@
 <report id="report_sessions"
 name="report of mystock"
 string="report of mystock"
-model="pro_mystock"
+model="my_stock"
 file="ERP_Project/reportmystock/report.mako"
 report_type="webkit"/>
 </data>
