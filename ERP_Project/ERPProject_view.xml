@@ -8,14 +8,14 @@
                 <form string="product" version="7.0">
                     <sheet>
                         <header>
-                            <button name="product_recieved" string="Recieved" states="new"/>
-                            <button name="product_under_review" string="Under Review" states="recieved"/>
-                            <button name="product_approved_commit1" string="Commitee 1" states="underReview"/>
-                            <button name="product_approved_commit2" string="Commitee 2" states="underReview"/>
-                            <button name="product_approved_commit3" string="Commitee 3" states="underReview"/>
-                            <button name="product_keeper_confirm" string="Keeper Confirm" states="approved"/>
-                            <button name="product_manager_confirm" string="Manager Confirm" states="keeperConfirm"/>
-                            <button name="product_in_stock" string="Super Manager Confirm" states="managerConfirm"/>
+                            <button name="product_recieved" attrs="{'invisible':['|',('is_keeper','!=',True),('stage','!=','new')]}" string="Recieved" stages="new"/>
+                            <button name="product_under_review" attrs="{'invisible':['|',('is_kmanager','!=',True),('stage','!=','recieved')]}" string="Under Review" stages="recieved"/>
+                            <button name="product_approved_commit1" string="Commitee 1" attrs="{'invisible':['|',('is_committee','!=',True),('stage','!=','underReview')]}" stages="underReview"/>
+                            <button name="product_approved_commit2" string="Commitee 2" attrs="{'invisible':['|',('is_committee','!=',True),('stage','!=','underReview')]}"  stages="underReview"/>
+                            <button name="product_approved_commit3" string="Commitee 3"  attrs="{'invisible':['|',('is_committee','!=',True),('stage','!=','underReview')]}"  stages="underReview"/>
+                            <button name="product_keeper_confirm" string="Keeper Confirm" attrs="{'invisible':['|',('is_smanager','!=',True),('stage','!=','approved')]}"  stages="approved"/>
+                            <button name="product_manager_confirm" string="Manager Confirm" attrs="{'invisible':['|',('is_keeper','!=',True),('stage','!=','keeperConfirm')]}" stages="keeperConfirm"/>
+                            <button name="product_in_stock" string="Super Manager Confirm" attrs="{'invisible':['|',('is_kmanager','!=',True),('stage','!=','managerConfirm')]}" stages="managerConfirm"/>
                             <field name="stage" widget="statusbar" statusbar_visible="new,recieved,underReview,approved,keeperConfirm,managerConfirm,inStock"/>
                         </header>
                         <group string="المنتج">
@@ -33,6 +33,10 @@
                             <field name="concat"/>
                             <field name="stockk_id"/>
                             <field name="concat"/>
+                            <field name="is_keeper" invisible="1"/>
+                            <field name="is_kmanager" invisible="1"/>
+                            <field name="is_smanager" invisible="1"/>
+                            <field name="is_committee" invisible="1"/>
                         </group>
                     </sheet>
                 </form>
