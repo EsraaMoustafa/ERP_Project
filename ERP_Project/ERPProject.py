@@ -138,12 +138,6 @@ class res_groups(orm.Model):
     }
 
 
-class res_groups_users_rel(orm.Model):
-    _inherit = "res.groups.users.rel"
-    _name = "res.groups.users.rel"
-    _columns = {
-    }
-
 class my_stock(orm.Model):
     _name = 'my.stock'
 
