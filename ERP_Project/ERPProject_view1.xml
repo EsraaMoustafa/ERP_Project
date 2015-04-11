@@ -1,40 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
-        <record id="pro_product_form" model="ir.ui.view">
-            <field name="name">pro.product.form</field>
-            <field name="model">pro.product</field>
-            <field name="arch" type="xml">
-                <form string="product" version="7.0">
-                    <sheet>
-                        <group string="التفاصيل">
-                            <field name="code"/>
-                            <field name="name"/>
-                            <field name="status"/>
-                            <field name="quantity"/>
-                            <field name="price"/>
-                            <field name="description"/>
-                            <field name="subsub_id"/>
-                            <field name="stockk_id"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-        <record id="pro_product_action" model="ir.actions.act_window">
-           <field name="name">pro.product</field>
-           <field name="res_model">pro.product</field>
-           <field name="view_type">form</field>
-           <field name="view_mode">tree,form</field>
-        </record>
-        <menuitem id="Product" name="Product"  parent="Warehouse" action="pro_product_action" />
 
         <!-- search for product -->
         <record id="search_product_form" model="ir.ui.view">
             <field name="name">search.product.form</field>
             <field name="model">search.product</field>
             <field name="arch" type="xml">
-                <form string="search for product">
+                <form string="البحث عن منتج">
                     <field name="search"/>
                     <field name="change" on_change="func1(search,change)"/>
                     <field name="result"/>
@@ -81,7 +54,6 @@
             </field>
         </record>
 
-
         <record id="my_stock_action" model="ir.actions.act_window">
            <field name="name">my.stock</field>
            <field name="res_model">my.stock</field>
@@ -89,15 +61,14 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-
         <record id="res_users_action" model="ir.actions.act_window">
            <field name="name">res.users</field>
            <field name="res_model">res.users</field>
            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem id="search" name="search for product"  parent="Warehouse" action="search_product_action" />
-        <menuitem id="stock" name=" stock "  parent="Warehouse" action="my_stock_action" />
-        <menuitem id="user" name=" users "  parent="Warehouse" action="res_users_action" />
+        <menuitem id="search" name="البحث عن منتج"  parent="Warehouse" action="search_product_action" />
+        <menuitem id="stock" name=" المخزن "  parent="Warehouse" action="my_stock_action" />
+        <menuitem id="user" name=" المستخدمون "  parent="Warehouse" action="res_users_action" />
     </data>
 </openerp>

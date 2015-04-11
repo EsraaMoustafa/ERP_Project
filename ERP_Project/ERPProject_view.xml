@@ -7,6 +7,17 @@
             <field name="arch" type="xml">
                 <form string="product" version="7.0">
                     <sheet>
+                        <header>
+                            <button name="product_recieved" string="Recieved" states="new"/>
+                            <button name="product_under_review" string="Under Review" states="recieved"/>
+                            <button name="product_approved_commit1" string="Commitee 1" states="underReview"/>
+                            <button name="product_approved_commit2" string="Commitee 2" states="underReview"/>
+                            <button name="product_approved_commit3" string="Commitee 3" states="underReview"/>
+                            <button name="product_keeper_confirm" string="Keeper Confirm" states="approved"/>
+                            <button name="product_manager_confirm" string="Manager Confirm" states="keeperConfirm"/>
+                            <button name="product_in_stock" string="Super Manager Confirm" states="managerConfirm"/>
+                            <field name="stage" widget="statusbar" statusbar_visible="new,recieved,underReview,approved,keeperConfirm,managerConfirm,inStock"/>
+                        </header>
                         <group string="المنتج">
                             <field name="code"/>
                             <field name="name"/>
@@ -22,7 +33,6 @@
                             <field name="concat"/>
                             <field name="stockk_id"/>
                             <field name="concat"/>
-                            <field name="stage"/>
                         </group>
                     </sheet>
                 </form>

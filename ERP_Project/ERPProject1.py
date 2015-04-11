@@ -2,22 +2,6 @@
 # encoding:UTF-8
 from openerp.osv import orm,osv, fields
 
-
-class pro_product(orm.Model):
-    status = [('new', 'new'), ('reused', 'reused'), ('damaged', 'damaged')]
-    _name = 'pro.product'
-    _columns = {
-        'code': fields.integer(string='code'),
-        'name': fields.char(string='name', size=50),
-        'status': fields.selection(status, 'status'),
-        'quantity': fields.integer(string='quantity'),
-        'price': fields.integer(string='price'),
-        'description': fields.char(string='description', size=250),
-        'subsub_id': fields.many2one('erp.subsubcategory', 'pro'),
-        'stockk_id': fields.many2one('my.stock', 'stock'),
-
-    }
-
 class search_product(orm.Model):
     _name = 'search.product'
     ch = [('name','الإسم'), ('code','رقم الكود')]
