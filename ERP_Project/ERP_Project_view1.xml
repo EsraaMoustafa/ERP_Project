@@ -5,17 +5,17 @@
                     <field name="name">erp.category.form</field>
                     <field name="model">erp.category</field>
                     <field name="arch" type="xml">
-                        <form string="الأبواب" version="7.0">
+                        <form string="الابواب" version="7.0">
                             <sheet>
                                 <group>
                                     <field name="name"/>
                                     <field name="code"/>
-                                    <field name="subcategory_id"/>
-                                        <!--<field name="name"/>-->
-                                        <!--<field name="code"/>-->
-                                        <!--<field name="description"/>-->
-                                        <!--<field name="subcategory_id"/>-->
-                                    <!--</field>-->
+                                    <field name="subcategory_id">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="description"/>
+                                        <field name="subcategory_id"/>
+                                    </field>
                                 </group>
                                 <notebook>
                                     <page string="معلومات اضافية">
@@ -34,29 +34,29 @@
                     <field name="view_mode">tree,form</field>
 
                 </record>
-                <menuitem id="Stocks" name="نظام إدارة المخازن"/>
-                <menuitem id="Warehouse" name="المخازن" parent="Stocks"/>
-                <menuitem id="Category" name="الأبواب"  parent="Warehouse" action="erp_category_action" />
+                <menuitem id="Stocks" name="Stocks"/>
+                <menuitem id="Warehouse" name="Warehouse" parent="Stocks"/>
+                <menuitem id="Category" name="Category"  parent="Warehouse" action="erp_category_action" />
 
                 <!-- the subcategory Def-->
                 <record model="ir.ui.view" id="erp_subcategory_form">
                     <field name="name">erp.subcategory.form</field>
                     <field name="model">erp.subcategory</field>
                     <field name="arch" type="xml">
-                        <form string="الأقسام" version="7.0">
+                        <form string="الاقسام" version="7.0">
                             <sheet>
                                 <group>
                                     <field name="name" />
                                     <field name="code" />
                                     <field name="description" />
                                     <field name="category_id" />
-                                    <field name="subsubcategory"/>
-                                        <!--<field name="name"/>-->
-                                        <!--<field name="code"/>-->
-                                        <!--<field name="description"/>-->
-                                        <!--<field name="category_id" />-->
-                                        <!--<field name="subsubcategory"/>-->
-                                    <!--</field>-->
+                                    <field name="subsubcategory">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="description"/>
+                                        <field name="category_id" />
+                                        <field name="subsubcategory"/>
+                                    </field>
                                 </group>
                             </sheet>
                         </form>
@@ -69,14 +69,14 @@
                     <field name="view_mode">tree,form</field>
 
                 </record>
-                <menuitem id="Sub" name="المجموعات" parent="Warehouse" action="erp_subcategory_action"/>
+                <menuitem id="Sub" name="Sub Category" parent="Warehouse" action="erp_subcategory_action"/>
 
                 <!-- sub sub category -->
                  <record model="ir.ui.view" id="erp_subsubcategory_form">
                     <field name="name">erp.subsubcategory.form</field>
                     <field name="model">erp.subsubcategory</field>
                     <field name="arch" type="xml">
-                        <form string="الأقسام" version="7.0">
+                        <form string="الاقسام الفرعية" version="7.0">
                             <sheet>
                                 <group>
                                     <field name="name" />
@@ -96,6 +96,7 @@
                     <field name="view_mode">tree,form</field>
 
                 </record>
-                <menuitem id="SubSubCategory" name="الأقسام" parent="Warehouse" action="erp_subsubcategory_action"/>
+
+                <menuitem id="SubSubCategory" name="SubSubCategory" parent="Warehouse" action="erp_subsubcategory_action"/>
             </data>
 </openerp>
